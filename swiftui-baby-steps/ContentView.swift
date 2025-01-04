@@ -7,26 +7,35 @@
 
 import SwiftUI
 
+// MARK: - Views
 struct ContentView: View {
+	@StateObject private var viewModel = MovieViewModel()
+	
 	var body: some View {
-		NavigationStack {
-			VStack {
-				Text("Welcome")
-				NavigationLink(destination: DetailView()) {
-					Text("Navigate To Detail")
+		TabView {
+			HomeView()
+				.environmentObject(viewModel)
+				.tabItem {
+					Label("Ana Sayfa", systemImage: "house.fill")
 				}
-			}
-			.navigationTitle("Home")
-			.navigationBarTitleDisplayMode(.large)
-			.toolbar {
-				ToolbarItem(placement: .navigationBarTrailing) {
-					Button (action: {
-						print("Settings Tapped!")
-					}, label: {
-						Text("Settings")
-					})
-				}
-			}
+			
+//			SearchView()
+//				.environmentObject(viewModel)
+//				.tabItem {
+//					Label("Ara", systemImage: "magnifyingglass")
+//				}
+		}
+		.onAppear {
+			viewModel.fetchMovies()
+		}
+	}
+}
+
+@main
+struct swiftui_baby_stepsApp: App {
+	var body: some Scene {
+		WindowGroup {
+			ContentView()
 		}
 	}
 }
@@ -34,39 +43,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
 	ContentView()
-		  .previewDevice("iPhone 15 Pro")
+		  .previewDevice("iPhone 16 Pro")
 		  .preferredColorScheme(.dark)
   }
 }
 
-struct DetailView: View {
-	var body: some View {
-		VStack {
-			Image("kodeco")
-				.resizable()
-				.aspectRatio(contentMode: .fit)
-				.frame(width: 150, height: 150)
-				.clipShape(.circle)
-				.overlay(Circle().stroke(Color.white, lineWidth: 3))
-				.shadow(radius: 7)
-			Text("Welcome to the Kodeco SwiftUI cookbook!")
-				.font(.headline)
-			Button(action: {
-				print("Button Tapped!")
-			}, label: {
-				Text("Tap me!")
-					.font(.title)
-					.foregroundColor(.white)
-			})
-			.padding()
-			.background(
-				LinearGradient(
-					gradient: Gradient(
-						colors: [Color.blue, Color.green]),
-						startPoint: .topLeading,
-						endPoint: .bottomTrailing)
-			)
-			.cornerRadius(10)
-		}
-	}
+#Preview {
+	ContentView()
 }

@@ -3,17 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		563D71942BBEAEE8007E6B28 /* swiftui_baby_stepsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D71932BBEAEE8007E6B28 /* swiftui_baby_stepsApp.swift */; };
 		563D71962BBEAEE8007E6B28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D71952BBEAEE8007E6B28 /* ContentView.swift */; };
 		563D71982BBEAEE9007E6B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 563D71972BBEAEE9007E6B28 /* Assets.xcassets */; };
 		563D719B2BBEAEE9007E6B28 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 563D719A2BBEAEE9007E6B28 /* Preview Assets.xcassets */; };
 		563D71A52BBEAEE9007E6B28 /* swiftui_baby_stepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D71A42BBEAEE9007E6B28 /* swiftui_baby_stepsTests.swift */; };
 		563D71AF2BBEAEE9007E6B28 /* swiftui_baby_stepsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D71AE2BBEAEE9007E6B28 /* swiftui_baby_stepsUITests.swift */; };
 		563D71B12BBEAEE9007E6B28 /* swiftui_baby_stepsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D71B02BBEAEE9007E6B28 /* swiftui_baby_stepsUITestsLaunchTests.swift */; };
+		56FB84752D2972B0002F088D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FB84742D2972B0002F088D /* Models.swift */; };
+		56FB84772D2972D4002F088D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FB84762D2972D4002F088D /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		563D71902BBEAEE8007E6B28 /* swiftui-baby-steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-baby-steps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		563D71932BBEAEE8007E6B28 /* swiftui_baby_stepsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_baby_stepsApp.swift; sourceTree = "<group>"; };
 		563D71952BBEAEE8007E6B28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		563D71972BBEAEE9007E6B28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		563D719A2BBEAEE9007E6B28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -44,7 +44,13 @@
 		563D71AA2BBEAEE9007E6B28 /* swiftui-baby-stepsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-baby-stepsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		563D71AE2BBEAEE9007E6B28 /* swiftui_baby_stepsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_baby_stepsUITests.swift; sourceTree = "<group>"; };
 		563D71B02BBEAEE9007E6B28 /* swiftui_baby_stepsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_baby_stepsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		56FB84742D2972B0002F088D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		56FB84762D2972D4002F088D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		56FB84782D297367002F088D /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		563D718D2BBEAEE8007E6B28 /* Frameworks */ = {
@@ -94,9 +100,11 @@
 		563D71922BBEAEE8007E6B28 /* swiftui-baby-steps */ = {
 			isa = PBXGroup;
 			children = (
-				563D71932BBEAEE8007E6B28 /* swiftui_baby_stepsApp.swift */,
-				563D71952BBEAEE8007E6B28 /* ContentView.swift */,
+				56FB84782D297367002F088D /* Views */,
 				563D71972BBEAEE9007E6B28 /* Assets.xcassets */,
+				563D71952BBEAEE8007E6B28 /* ContentView.swift */,
+				56FB84742D2972B0002F088D /* Models.swift */,
+				56FB84762D2972D4002F088D /* ViewModel.swift */,
 				563D71992BBEAEE9007E6B28 /* Preview Content */,
 			);
 			path = "swiftui-baby-steps";
@@ -141,6 +149,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				56FB84782D297367002F088D /* Views */,
 			);
 			name = "swiftui-baby-steps";
 			productName = "swiftui-baby-steps";
@@ -215,6 +226,8 @@
 				Base,
 			);
 			mainGroup = 563D71872BBEAEE8007E6B28;
+			packageReferences = (
+			);
 			productRefGroup = 563D71912BBEAEE8007E6B28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,7 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				563D71962BBEAEE8007E6B28 /* ContentView.swift in Sources */,
-				563D71942BBEAEE8007E6B28 /* swiftui_baby_stepsApp.swift in Sources */,
+				56FB84772D2972D4002F088D /* ViewModel.swift in Sources */,
+				56FB84752D2972B0002F088D /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
